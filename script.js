@@ -9,5 +9,4 @@ if (finishMoney > housePrice) {
     console.log('Ваcилий не сможет купить дом за $13500');
 }
 
-console.log(finishMoney);
 console.log(`Остаток после покупки $${finishMoney - housePrice}`);
