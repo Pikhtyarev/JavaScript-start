@@ -1,6 +1,6 @@
 const startMoney = 12000;
 const percent = 0.07;
-const finishMoney = (startMoney * (1 + percent) ** 24);
+const finishMoney = (startMoney * (1 + percent / 12) ** 24);
 const housePrice = 13500;
 
 if (finishMoney > housePrice) {
