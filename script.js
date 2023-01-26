@@ -1,10 +1,11 @@
-let answer = prompt('Сколько будет 7+15 или 7-15?');
+let balance = true;
+let bonusBalance = true;
+let isBanned = true;
+let isExist = true;
+let isSelling = true;
 
-switch (true) {
-    case Number(answer) === 22:
-    case Number(answer) === -8:
-    case answer === 'Я не робот':
-        alert('Успех');
-    break;
-    default : alert('Вы робот');
+if ((balance || bonusBalance) && !isBanned && !isExist && isSelling) {
+    console.log('Можно купить');
+} else {
+    console.log('Не купить');
 }
