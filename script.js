@@ -1,11 +1,9 @@
-let balance = true;
-let bonusBalance = true;
-let isBanned = true;
-let isExist = true;
-let isSelling = true;
-
-if ((balance || bonusBalance) && !isBanned && !isExist && isSelling) {
-    console.log('Можно купить');
-} else {
-    console.log('Не купить');
+function toPower(num, power) {
+    return num ** power;
 }
+
+console.log(toPower(2,3));
+
+const toPowerArrow = (num2, power2) => {return num2 ** power2};
+
+console.log(toPowerArrow(2,3)); 
