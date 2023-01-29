@@ -1,9 +1,19 @@
-function toPower(num, power) {
-    return num ** power;
+const priceMacBook = 2000;
+
+const credit = (age, job) => {
+    if ((age > 24) && (job == true)) {
+        return 500;
+    } else if (age > 24) {
+       return 100;
+    } return 0;
 }
 
-console.log(toPower(2,3));
+function canBuy (money) {
+    if (money >= priceMacBook) {
+        console.log('Можно купить и без кредита');
+    } else if (money < priceMacBook) {
+        (money + credit(25, false)) >= priceMacBook ? console.log('Выдадут кредит и можно покупать') : console.log('Купить не получится')
+    }
+}
 
-const toPowerArrow = (num2, power2) => {return num2 ** power2};
-
-console.log(toPowerArrow(2,3)); 
+console.log(canBuy(1900));
