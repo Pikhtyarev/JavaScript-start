@@ -1,19 +1,33 @@
-const priceMacBook = 2000;
+const tasks = ['Task 1', 'Taks 2'];
 
-const credit = (age, job) => {
-    if ((age > 24) && (job == true)) {
-        return 500;
-    } else if (age > 24) {
-       return 100;
-    } return 0;
+function AddInEnd(elem) {
+    tasks.push(elem);
 }
 
-function canBuy (money) {
-    if (money >= priceMacBook) {
-        console.log('Можно купить и без кредита');
-    } else if (money < priceMacBook) {
-        (money + credit(25, false)) >= priceMacBook ? console.log('Выдадут кредит и можно покупать') : console.log('Купить не получится')
+function DeleteByName(elem) {
+    const indexElem = tasks.indexOf(elem);
+    if (indexElem === -1) {
+        return;
     }
+    tasks.splice(indexElem, 1);
 }
 
-console.log(canBuy(1900));
+function Prioritize(elem) {
+    const indexElem = tasks.indexOf(elem);
+    if (indexElem === -1) {
+        return;
+    }
+    const oldElem = tasks[indexElem];
+    tasks.splice(indexElem, 1);
+    tasks.unshift(oldElem);
+}
+
+AddInEnd('Task 3');
+AddInEnd('Task 4');
+console.log(tasks);
+
+DeleteByName('Task 3');
+console.log(tasks);
+
+Prioritize('Task 4');
+console.log(tasks);
