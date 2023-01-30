@@ -1,33 +1,21 @@
-const tasks = ['Task 1', 'Taks 2'];
+const url = 'https://purpleschool.ru/course/javascript';
 
-function AddInEnd(elem) {
-    tasks.push(elem);
+function cut() {
+const protocol = url.split(':');
+const protocolRes = protocol.splice(0, 1);
+const pro = protocolRes.join('');
+
+const domen = url.split('/');
+const domenRes = domen.splice(2, 1);
+const dom = domenRes.join('');
+
+domen.splice(0, 1);
+const wayRes = domen.join('/');
+
+console.log('Была строчка URL: ' + url);
+console.log('Протокол: ' + pro);
+console.log('Домен: ' + dom);
+console.log('Путь внутри сайта: ' + wayRes);
 }
 
-function DeleteByName(elem) {
-    const indexElem = tasks.indexOf(elem);
-    if (indexElem === -1) {
-        return;
-    }
-    tasks.splice(indexElem, 1);
-}
-
-function Prioritize(elem) {
-    const indexElem = tasks.indexOf(elem);
-    if (indexElem === -1) {
-        return;
-    }
-    const oldElem = tasks[indexElem];
-    tasks.splice(indexElem, 1);
-    tasks.unshift(oldElem);
-}
-
-AddInEnd('Task 3');
-AddInEnd('Task 4');
-console.log(tasks);
-
-DeleteByName('Task 3');
-console.log(tasks);
-
-Prioritize('Task 4');
-console.log(tasks);
+cut();
