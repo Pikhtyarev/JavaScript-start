@@ -1,31 +1,45 @@
 const operations = [1000, -700, 300, -500, 10000];
+startingBalance = 100;
 
-let result = 100;
-for (let element of operations) {
-    result += element;
-    if (result < 0) {
-        console.log(false);
+function getTotal(array, enterBalance) {
+    let balance = enterBalance;
+    for (let element of operations) {
+        balance += element;
     }
+    return balance;
 }
 
-let counterP = 0;
-let pos = 0;
-for (let i = 0; i < operations.length; i++) {
-    if (operations[i] > 0) {
-        pos += operations[i];
-        counterP++;
+function isBalanceNegative(array, enterBalance) {
+    let balance = enterBalance;
+    let isOk = true;
+    for (let element of operations) {
+        balance += element;
+        if (balance < 0) {
+            isOk = false;
+            break;
+        }
     }
+    return isOk;
 }
 
-let counterN = 0;
-let neg = 0;
-for (let i = 0; i < operations.length; i++){
-    if (operations[i] < 0) {
-        neg -= operations [i];
-        counterN++;
+function averageSum(array) {
+    let counterP = 0;
+    let pos = 0;
+    let counterN = 0;
+    let neg = 0;
+    for (element of operations) {
+        if (element > 0) {
+            pos += element;
+            counterP++;
+        }
+        if (element < 0) {
+            neg += element;
+            counterN++;
+        }
     }
+    return [pos / counterP, neg / counterN];
 }
 
-console.log(`Итоговый баланс $${result}`);
-console.log(`Средний доход $${pos/counterP}`);
-console.log(`Средний расход $${neg/counterN}`);
+console.log(`Итоговый баланс ${getTotal(operations, startingBalance)}`);
+console.log(`${isBalanceNegative(operations, startingBalance)}`)
+console.log(`Средний доход и расход ${averageSum(operations)}`);
