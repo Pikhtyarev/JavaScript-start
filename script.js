@@ -1,9 +1,8 @@
 const arr = ['!', 'JS', 'люблю', 'Я'];
 
-let newArr = '';
+let newArr = [];
 for (let i = (arr.length - 1); i >= 0; i--) {
-    newArr += arr[i];
-    newArr += ' ';
+    newArr.push(arr[i]);    
 }
 
-console.log(newArr);
+console.log(newArr.join(' '));
