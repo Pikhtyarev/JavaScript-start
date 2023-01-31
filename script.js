@@ -1,8 +1,31 @@
-const arr = ['!', 'JS', 'люблю', 'Я'];
+const operations = [1000, -700, 300, -500, 10000];
 
-let newArr = [];
-for (let i = (arr.length - 1); i >= 0; i--) {
-    newArr.push(arr[i]);    
+let result = 100;
+for (let element of operations) {
+    result += element;
+    if (result < 0) {
+        console.log(false);
+    }
 }
 
-console.log(newArr.join(' '));
+let counterP = 0;
+let pos = 0;
+for (let i = 0; i < operations.length; i++) {
+    if (operations[i] > 0) {
+        pos += operations[i];
+        counterP++;
+    }
+}
+
+let counterN = 0;
+let neg = 0;
+for (let i = 0; i < operations.length; i++){
+    if (operations[i] < 0) {
+        neg -= operations [i];
+        counterN++;
+    }
+}
+
+console.log(`Итоговый баланс $${result}`);
+console.log(`Средний доход $${pos/counterP}`);
+console.log(`Средний расход $${neg/counterN}`);
