@@ -1,11 +1,9 @@
-const url = 'https://purpleschool.ru/course/javascript';
+const arr = ['!', 'JS', 'люблю', 'Я'];
 
-function cut(url) {
-    const [protocol, _, domen, ...way] = url.split('/');
-
-    console.log(`Протокол: ${protocol.split(':')[0]}`);
-    console.log(`Домен: ${domen}`);
-    console.log(`Путь: /${way.join('/')}`);
+let newArr = '';
+for (let i = (arr.length - 1); i >= 0; i--) {
+    newArr += arr[i];
+    newArr += ' ';
 }
 
-cut(url);
+console.log(newArr);
